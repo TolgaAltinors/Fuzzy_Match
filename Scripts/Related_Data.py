@@ -481,9 +481,13 @@ def main(file_name, match_ratio):
 
 if __name__ == '__main__':
 
+    script_dir = os.path.abspath(os.path.dirname(__file__))
+    temp_dir, _ = os.path.split(script_dir)
+    data_dir = os.path.join(temp_dir, 'Input_Data')
+    file_path = os.path.join(data_dir, 'Test_Data.csv')
+    
     # # Hard coded params
-    file_name = r"C:\Input_Data\Test_Data.csv"
     match_ratio = 90
 
     # # Run main function
-    main(file_name, match_ratio)
+    main(file_path, match_ratio)
